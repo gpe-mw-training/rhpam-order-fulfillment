@@ -15,20 +15,23 @@ public class ProductOrder implements java.io.Serializable {
 	@javax.persistence.SequenceGenerator(sequenceName = "PRODUCTORDER_ID_SEQ", name = "PRODUCTORDER_ID_GENERATOR")
 	private java.lang.Long id;
 
-	@org.kie.api.definition.type.Label(value = "Product Name")
+	@org.kie.api.definition.type.Label("Product Name")
 	private java.lang.String productName;
 
-	@org.kie.api.definition.type.Label(value = "Is in Stock")
+	@org.kie.api.definition.type.Label("Is in Stock")
 	private java.lang.Boolean inStock;
 
-	@org.kie.api.definition.type.Label(value = "requestDate")
+	@org.kie.api.definition.type.Label("requestDate")
 	private java.util.Date requestDate;
 
-	@org.kie.api.definition.type.Label(value = "Is Late Delivery")
+	@org.kie.api.definition.type.Label("Is Late Delivery")
 	private java.lang.Boolean lateDelivery;
 
-	@org.kie.api.definition.type.Label(value = "Is Undeliverable")
+	@org.kie.api.definition.type.Label("Is Undeliverable")
 	private java.lang.Boolean undeliverable;
+
+	@org.kie.api.definition.type.Label(value = "Supplier Delivery Days")
+	private java.lang.Integer supplierDeliveryDays;
 
 	public ProductOrder() {
 	}
@@ -81,15 +84,25 @@ public class ProductOrder implements java.io.Serializable {
 		this.undeliverable = undeliverable;
 	}
 
+	public java.lang.Integer getSupplierDeliveryDays() {
+		return this.supplierDeliveryDays;
+	}
+
+	public void setSupplierDeliveryDays(java.lang.Integer supplierDeliveryDays) {
+		this.supplierDeliveryDays = supplierDeliveryDays;
+	}
+
 	public ProductOrder(java.lang.Long id, java.lang.String productName,
 			java.lang.Boolean inStock, java.util.Date requestDate,
-			java.lang.Boolean lateDelivery, java.lang.Boolean undeliverable) {
+			java.lang.Boolean lateDelivery, java.lang.Boolean undeliverable,
+			java.lang.Integer supplierDeliveryDays) {
 		this.id = id;
 		this.productName = productName;
 		this.inStock = inStock;
 		this.requestDate = requestDate;
 		this.lateDelivery = lateDelivery;
 		this.undeliverable = undeliverable;
+		this.supplierDeliveryDays = supplierDeliveryDays;
 	}
 
 }
