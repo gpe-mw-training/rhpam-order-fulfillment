@@ -87,7 +87,7 @@
         "productOrder" : new ObjectDataType("og.acme.order_fulfillment.ProductOrder")
     ], 
     "results" : [ 
-        "Result" : new ObjectDataType("org.acme.order_fulfillment.ProductOrder") 
+        "productOrder" : new ObjectDataType("org.acme.order_fulfillment.ProductOrder") 
     ], 
     "displayName" : "Stock Review", 
     "icon" : "check_stock.png",
@@ -100,7 +100,7 @@
         "productOrder" : new ObjectDataType("og.acme.order_fulfillment.ProductOrder")
     ], 
     "results" : [ 
-        "Result" : new ObjectDataType("org.acme.order_fulfillment.ProductOrder") 
+        "productOrder" : new ObjectDataType("org.acme.order_fulfillment.ProductOrder") 
     ], 
     "displayName" : "Supplier Stock Review", 
     "icon" : "check_supplier.png",
