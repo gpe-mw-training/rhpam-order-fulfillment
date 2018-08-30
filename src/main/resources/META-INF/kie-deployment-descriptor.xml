@@ -9,7 +9,32 @@
     <event-listeners/>
     <task-event-listeners/>
     <globals/>
-    <work-item-handlers/>
+    <work-item-handlers>
+        <work-item-handler>
+            <resolver>reflection</resolver>
+            <identifier>org.acme.order_fulfillment.StockREviewMockWih</identifier>
+            <parameters/>
+            <name>StockReview</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>reflection</resolver>
+            <identifier>org.acme.order_fulfillment.StockReviewSupplierMockWih</identifier>
+            <parameters/>
+            <name>StockReviewSupplier</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>reflection</resolver>
+            <identifier>org.acme.order_fulfillment.EmailMockWih</identifier>
+            <parameters/>
+            <name>Email</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>reflection</resolver>
+            <identifier>org.acme.order_fulfillment.RestMockWih</identifier>
+            <parameters/>
+            <name>Rest</name>
+        </work-item-handler>
+    </work-item-handlers>
     <environment-entries/>
     <configurations/>
     <required-roles/>
