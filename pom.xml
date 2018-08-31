@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.acme</groupId>
   <artifactId>order-fulfillment</artifactId>
-  <version>1.1.4</version>
+  <version>1.2.0</version>
   <packaging>kjar</packaging>
   <name>order-fulfillment</name>
   <description>Order Fulfillment</description>
