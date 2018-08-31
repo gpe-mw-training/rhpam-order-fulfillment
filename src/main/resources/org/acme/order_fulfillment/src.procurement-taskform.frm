@@ -1,0 +1,1 @@
+{"id":"fd6cabaa-6c69-488f-8ba5-dd7ce52f01ca","name":"src.procurement-taskform.frm","model":{"processName":"procurement","processId":"src.procurement","properties":[],"formModelType":"org.kie.workbench.common.forms.jbpm.model.authoring.process.BusinessProcessFormModel"},"fields":[],"layoutTemplate":{"version":2,"style":"FLUID","layoutProperties":{},"rows":[]}}
