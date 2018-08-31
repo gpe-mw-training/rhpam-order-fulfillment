@@ -35,6 +35,12 @@ public class ProductOrder implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Supplier Delivery Days")
 	private java.lang.Integer supplierDeliveryDays;
 
+	@org.kie.api.definition.type.Label(value = "Shipping Address")
+	private java.lang.String shippingAddress;
+
+	@org.kie.api.definition.type.Label(value = "Tracking Numbers")
+	private java.lang.String trackingNumber;
+
 	public ProductOrder() {
 	}
 
@@ -103,10 +109,27 @@ public class ProductOrder implements java.io.Serializable {
 				+ supplierDeliveryDays + "]";
 	}
 
+	public java.lang.String getShippingAddress() {
+		return this.shippingAddress;
+	}
+
+	public void setShippingAddress(java.lang.String shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+
+	public java.lang.String getTrackingNumber() {
+		return this.trackingNumber;
+	}
+
+	public void setTrackingNumber(java.lang.String trackingNumber) {
+		this.trackingNumber = trackingNumber;
+	}
+
 	public ProductOrder(java.lang.Long id, java.lang.String productName,
 			java.lang.Boolean inStock, java.util.Date requestDate,
 			java.lang.Boolean lateDelivery, java.lang.Boolean undeliverable,
-			java.lang.Integer supplierDeliveryDays) {
+			java.lang.Integer supplierDeliveryDays,
+			java.lang.String shippingAddress, java.lang.String trackingNumber) {
 		this.id = id;
 		this.productName = productName;
 		this.inStock = inStock;
@@ -114,6 +137,8 @@ public class ProductOrder implements java.io.Serializable {
 		this.lateDelivery = lateDelivery;
 		this.undeliverable = undeliverable;
 		this.supplierDeliveryDays = supplierDeliveryDays;
+		this.shippingAddress = shippingAddress;
+		this.trackingNumber = trackingNumber;
 	}
 
 }
