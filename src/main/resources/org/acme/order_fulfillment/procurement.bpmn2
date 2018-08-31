@@ -69,7 +69,7 @@
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
     <bpmn2:sequenceFlow id="_432894B2-D391-4C13-AE0D-250E13360733" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="processStartEvent" targetRef="_CB925F08-7393-41F1-A215-26384337119E"/>
-    <bpmn2:exclusiveGateway id="_26AE59A3-B7A2-4ACF-833D-C956A6A05D5B" drools:selectable="true" drools:dg="< = 2 days : _B4AFEA1F-CDB3-415F-9A0B-F2DD2037E253" color:background-color="#f0e68c" color:border-color="#a67f00" color:color="#000000" name="Deliverable?" gatewayDirection="Diverging" default="_B4AFEA1F-CDB3-415F-9A0B-F2DD2037E253">
+    <bpmn2:exclusiveGateway id="_26AE59A3-B7A2-4ACF-833D-C956A6A05D5B" drools:selectable="true" drools:dg="2 days or less : _B4AFEA1F-CDB3-415F-9A0B-F2DD2037E253" color:background-color="#f0e68c" color:border-color="#a67f00" color:color="#000000" name="Deliverable?" gatewayDirection="Diverging" default="_B4AFEA1F-CDB3-415F-9A0B-F2DD2037E253">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Deliverable?]]></drools:metaValue>
@@ -81,10 +81,10 @@
       <bpmn2:outgoing>_FB3A015E-179E-4AC2-9762-11DA89445C2C</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="_9EA395AC-2932-41C7-923C-FC96E1E469A1" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="_CB925F08-7393-41F1-A215-26384337119E" targetRef="_26AE59A3-B7A2-4ACF-833D-C956A6A05D5B"/>
-    <bpmn2:sequenceFlow id="_B4AFEA1F-CDB3-415F-9A0B-F2DD2037E253" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" name="&lt; = 2 days" sourceRef="_26AE59A3-B7A2-4ACF-833D-C956A6A05D5B" targetRef="_4BA08049-6F2D-4EE4-AEA9-1AC969E65F5F">
+    <bpmn2:sequenceFlow id="_B4AFEA1F-CDB3-415F-9A0B-F2DD2037E253" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" name="2 days or less" sourceRef="_26AE59A3-B7A2-4ACF-833D-C956A6A05D5B" targetRef="_4BA08049-6F2D-4EE4-AEA9-1AC969E65F5F">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[< = 2 days]]></drools:metaValue>
+          <drools:metaValue><![CDATA[2 days or less]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_gAxZK6yuEei0cLo1muAcCw"></bpmn2:conditionExpression>
@@ -102,10 +102,10 @@
       <bpmn2:outgoing>_00AD7A02-F929-434F-B43F-AEAB80A1A434</bpmn2:outgoing>
       <bpmn2:signalEventDefinition id="_gAxZLKyuEei0cLo1muAcCw" signalRef="_24771c96-a830-361f-87ef-3dfce59682e3"/>
     </bpmn2:intermediateThrowEvent>
-    <bpmn2:sequenceFlow id="_60877D58-D415-4B8C-8468-890F5F187FBF" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" name="&gt; 2 days" sourceRef="_26AE59A3-B7A2-4ACF-833D-C956A6A05D5B" targetRef="_60366D35-173F-442A-8B29-8CAA2BB142A5">
+    <bpmn2:sequenceFlow id="_60877D58-D415-4B8C-8468-890F5F187FBF" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" name="More than 2 days" sourceRef="_26AE59A3-B7A2-4ACF-833D-C956A6A05D5B" targetRef="_60366D35-173F-442A-8B29-8CAA2BB142A5">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[> 2 days]]></drools:metaValue>
+          <drools:metaValue><![CDATA[More than 2 days]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_gAxZLayuEei0cLo1muAcCw" language="http://www.java.com/java"><![CDATA[return productOrder.getLateDelivery();]]></bpmn2:conditionExpression>
