@@ -1,13 +1,14 @@
 package org.acme.order_fulfillment;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.stream.Stream;
 
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
@@ -58,7 +59,9 @@ public class StockReviewMockWih implements WorkItemHandler {
 		int iR = rnd.nextInt(LINES_IN_FILE) + 1;
 
 		// return the iRth line of the "products.txt" in resource path
-		return Files.readAllLines(Paths.get(ClassLoader.getSystemResource("products.txt").toURI())).get(iR);
+		Stream<String> stream = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("products.txt"))).lines();
+		stream.skip(iR);
+		return stream.findFirst().orElse("A product");
 	}
 
 	private boolean calculateInStock() {
