@@ -17,7 +17,7 @@
             <name>StockReviewSupplier</name>
         </work-item-handler>
         <work-item-handler>
-            <resolver>mvel</resolver>
+            <resolver>reflection</resolver>
             <identifier>org.acme.order_fulfillment.StockReviewMockWih</identifier>
             <parameters/>
             <name>StockReview</name>
