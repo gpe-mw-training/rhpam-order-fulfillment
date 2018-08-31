@@ -27,18 +27,25 @@ public class StockReviewMockWih implements WorkItemHandler {
 		po.setProductName((String) workItem.getParameter("productName"));
 		po.setRequestDate(new Date());
 
-		if ("ERROR".equalsIgnoreCase(po.getProductName()))
-			throw new RuntimeException("Error while stock review");
-
 		if ("RANDOM".equalsIgnoreCase(po.getProductName())) {
 			try {
-				po.setProductName(getRandomProductName());
+				Random rnd = new Random();
+				int iR = rnd.nextInt(10) + 1;
+				// 20% Probability of error during stock review
+				if (iR <= 8) {
+					po.setProductName(getRandomProductName());
+				} else {
+					po.setProductName("ERROR");
+				}
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			} catch (URISyntaxException e) {
 				throw new RuntimeException(e);
 			}
 		}
+
+		if ("ERROR".equalsIgnoreCase(po.getProductName()))
+			throw new RuntimeException("Error while stock review");
 
 		if ("IN_STOCK".equalsIgnoreCase(po.getProductName())) {
 			po.setInStock(true);
@@ -64,8 +71,8 @@ public class StockReviewMockWih implements WorkItemHandler {
 	private boolean calculateInStock() {
 		Random rnd = new Random();
 		int iR = rnd.nextInt(10) + 1;
-		// 20% chances of in stock
-		return iR < 8;
+		// 80% chances of in stock
+		return iR <= 8;
 	}
 
 }
