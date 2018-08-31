@@ -12,15 +12,15 @@
     <work-item-handlers>
         <work-item-handler>
             <resolver>reflection</resolver>
-            <identifier>org.acme.order_fulfillment.StockREviewMockWih</identifier>
-            <parameters/>
-            <name>StockReview</name>
-        </work-item-handler>
-        <work-item-handler>
-            <resolver>reflection</resolver>
             <identifier>org.acme.order_fulfillment.StockReviewSupplierMockWih</identifier>
             <parameters/>
             <name>StockReviewSupplier</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>org.acme.order_fulfillment.StockReviewMockWih</identifier>
+            <parameters/>
+            <name>StockReview</name>
         </work-item-handler>
         <work-item-handler>
             <resolver>reflection</resolver>
