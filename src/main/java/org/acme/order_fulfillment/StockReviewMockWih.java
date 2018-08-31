@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -58,10 +60,8 @@ public class StockReviewMockWih implements WorkItemHandler {
 		Random rnd = new Random();
 		int iR = rnd.nextInt(LINES_IN_FILE) + 1;
 
-		// return the iRth line of the "products.txt" in resource path
-		Stream<String> stream = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("products.txt"))).lines();
-		stream.skip(iR);
-		return stream.findFirst().orElse("A product");
+		// return the iRth line of the "products.txt" in /data path
+		return Files.readAllLines(Paths.get(ClassLoader.getSystemResource("/data/products.txt").toURI())).get(iR);
 	}
 
 	private boolean calculateInStock() {
