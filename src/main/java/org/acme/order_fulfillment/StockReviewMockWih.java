@@ -52,7 +52,7 @@ public class StockReviewMockWih implements WorkItemHandler {
 		Random rnd = new Random();
 		int iR = rnd.nextInt(LINES_IN_FILE) + 1;
 
-		return Files.readAllLines(Paths.get("products.csv")).get(iR);
+		return Files.readAllLines(Paths.get("products.txt")).get(iR);
 	}
 
 	private boolean calculateInStock() {
