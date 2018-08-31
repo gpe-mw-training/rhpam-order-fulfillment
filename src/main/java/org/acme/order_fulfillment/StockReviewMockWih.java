@@ -22,6 +22,9 @@ public class StockReviewMockWih implements WorkItemHandler {
 
 	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
 		ProductOrder po = (ProductOrder) workItem.getParameter("productOrder");
+		if (po == null)
+			po = new ProductOrder();
+		po.setProductName((String) workItem.getParameter("productName"));
 		po.setRequestDate(new Date());
 
 		if ("ERROR".equalsIgnoreCase(po.getProductName()))
@@ -53,7 +56,7 @@ public class StockReviewMockWih implements WorkItemHandler {
 		final int LINES_IN_FILE = 144;
 		Random rnd = new Random();
 		int iR = rnd.nextInt(LINES_IN_FILE) + 1;
-		
+
 		// return the iRth line of the "products.txt" in resource path
 		return Files.readAllLines(Paths.get(ClassLoader.getSystemResource("products.txt").toURI())).get(iR);
 	}
