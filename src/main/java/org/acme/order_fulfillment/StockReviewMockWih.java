@@ -1,6 +1,7 @@
 package org.acme.order_fulfillment;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Date;
@@ -30,7 +31,8 @@ public class StockReviewMockWih implements WorkItemHandler {
 			try {
 				po.setProductName(getRandomProductName());
 			} catch (IOException e) {
-				e.printStackTrace();
+				throw new RuntimeException(e);
+			} catch (URISyntaxException e) {
 				throw new RuntimeException(e);
 			}
 		}
@@ -47,12 +49,13 @@ public class StockReviewMockWih implements WorkItemHandler {
 		manager.completeWorkItem(workItem.getId(), out);
 	}
 
-	private String getRandomProductName() throws IOException {
+	private String getRandomProductName() throws IOException, URISyntaxException {
 		final int LINES_IN_FILE = 144;
 		Random rnd = new Random();
 		int iR = rnd.nextInt(LINES_IN_FILE) + 1;
-
-		return Files.readAllLines(Paths.get("products.txt")).get(iR);
+		
+		// return the iRth line of the "products.txt" in resource path
+		return Files.readAllLines(Paths.get(ClassLoader.getSystemResource("products.txt").toURI())).get(iR);
 	}
 
 	private boolean calculateInStock() {

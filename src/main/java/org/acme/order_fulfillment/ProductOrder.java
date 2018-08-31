@@ -92,9 +92,8 @@ public class ProductOrder implements java.io.Serializable {
 		this.supplierDeliveryDays = supplierDeliveryDays;
 	}
 
-	public ProductOrder(java.lang.Long id, java.lang.String productName,
-			java.lang.Boolean inStock, java.util.Date requestDate,
-			java.lang.Boolean lateDelivery, java.lang.Boolean undeliverable,
+	public ProductOrder(java.lang.Long id, java.lang.String productName, java.lang.Boolean inStock,
+			java.util.Date requestDate, java.lang.Boolean lateDelivery, java.lang.Boolean undeliverable,
 			java.lang.Integer supplierDeliveryDays) {
 		this.id = id;
 		this.productName = productName;
@@ -103,6 +102,38 @@ public class ProductOrder implements java.io.Serializable {
 		this.lateDelivery = lateDelivery;
 		this.undeliverable = undeliverable;
 		this.supplierDeliveryDays = supplierDeliveryDays;
+	}
+
+	@Override
+	public String toString() {
+		return "ProductOrder [id=" + id + ", productName=" + productName + ", inStock=" + inStock + ", requestDate="
+				+ requestDate + ", lateDelivery=" + lateDelivery + ", undeliverable=" + undeliverable
+				+ ", supplierDeliveryDays=" + supplierDeliveryDays + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ProductOrder other = (ProductOrder) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 
 }
