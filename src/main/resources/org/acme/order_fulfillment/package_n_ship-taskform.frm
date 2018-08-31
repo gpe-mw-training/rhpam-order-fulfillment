@@ -1,0 +1,1 @@
+{"id":"074fb870-6a20-48ae-9b9b-5abeed157d40","name":"package_n_ship-taskform.frm","model":{"taskName":"package_n_ship","processId":"src.order_fulfillment","properties":[],"formModelType":"org.kie.workbench.common.forms.jbpm.model.authoring.task.TaskFormModel"},"fields":[],"layoutTemplate":{"version":2,"style":"FLUID","layoutProperties":{},"rows":[]}}
