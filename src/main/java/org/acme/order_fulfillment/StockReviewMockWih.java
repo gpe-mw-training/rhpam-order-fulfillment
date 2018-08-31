@@ -60,8 +60,9 @@ public class StockReviewMockWih implements WorkItemHandler {
 		Random rnd = new Random();
 		int iR = rnd.nextInt(LINES_IN_FILE) + 1;
 
-		// return the iRth line of the "products.txt" in /data path
-		return Files.readAllLines(Paths.get(ClassLoader.getSystemResource("/data/products.txt").toURI())).get(iR);
+		// return the iRth line of the "products.txt" in resource path
+		return stream.findFirst().
+		return Files.readAllLines(Paths.get("/data/products.txt")).get(iR);
 	}
 
 	private boolean calculateInStock() {
