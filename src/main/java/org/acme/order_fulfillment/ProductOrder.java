@@ -35,11 +35,17 @@ public class ProductOrder implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Supplier Delivery Days")
 	private java.lang.Integer supplierDeliveryDays;
 
-	@org.kie.api.definition.type.Label(value = "Shipping Address")
+	@org.kie.api.definition.type.Label("Shipping Address")
 	private java.lang.String shippingAddress;
 
-	@org.kie.api.definition.type.Label(value = "Tracking Numbers")
+	@org.kie.api.definition.type.Label("Tracking Numbers")
 	private java.lang.String trackingNumber;
+
+	@org.kie.api.definition.type.Label(value = "Supplier Order Quantity")
+	private java.lang.Integer supplierOrderQuantity;
+
+	@org.kie.api.definition.type.Label(value = "Supplier Received Quantity")
+	private java.lang.Integer supplierReceivedQuantity;
 
 	public ProductOrder() {
 	}
@@ -125,11 +131,30 @@ public class ProductOrder implements java.io.Serializable {
 		this.trackingNumber = trackingNumber;
 	}
 
+	public java.lang.Integer getSupplierOrderQuantity() {
+		return this.supplierOrderQuantity;
+	}
+
+	public void setSupplierOrderQuantity(java.lang.Integer supplierOrderQuantity) {
+		this.supplierOrderQuantity = supplierOrderQuantity;
+	}
+
+	public java.lang.Integer getSupplierReceivedQuantity() {
+		return this.supplierReceivedQuantity;
+	}
+
+	public void setSupplierReceivedQuantity(
+			java.lang.Integer supplierReceivedQuantity) {
+		this.supplierReceivedQuantity = supplierReceivedQuantity;
+	}
+
 	public ProductOrder(java.lang.Long id, java.lang.String productName,
 			java.lang.Boolean inStock, java.util.Date requestDate,
 			java.lang.Boolean lateDelivery, java.lang.Boolean undeliverable,
 			java.lang.Integer supplierDeliveryDays,
-			java.lang.String shippingAddress, java.lang.String trackingNumber) {
+			java.lang.String shippingAddress, java.lang.String trackingNumber,
+			java.lang.Integer supplierOrderQuantity,
+			java.lang.Integer supplierReceivedQuantity) {
 		this.id = id;
 		this.productName = productName;
 		this.inStock = inStock;
@@ -139,6 +164,8 @@ public class ProductOrder implements java.io.Serializable {
 		this.supplierDeliveryDays = supplierDeliveryDays;
 		this.shippingAddress = shippingAddress;
 		this.trackingNumber = trackingNumber;
+		this.supplierOrderQuantity = supplierOrderQuantity;
+		this.supplierReceivedQuantity = supplierReceivedQuantity;
 	}
 
 }
