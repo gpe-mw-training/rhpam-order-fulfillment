@@ -12,7 +12,7 @@ public class EmailMockWih implements WorkItemHandler {
 	}
 
 	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
-		System.out.println("Email sent");
+		System.out.println("Email sent: " + workItem.getParameter("Body"));
 		manager.completeWorkItem(workItem.getId(), null);
 	}
 
