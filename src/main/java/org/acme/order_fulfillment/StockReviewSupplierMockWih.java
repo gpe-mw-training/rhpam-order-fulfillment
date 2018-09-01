@@ -32,13 +32,13 @@ public class StockReviewSupplierMockWih implements WorkItemHandler {
 	private int calculateDeliverable() {
 		Random rnd = new Random();
 		int iR = rnd.nextInt(10) + 1;
-		// 60% chances of early delivery
-		if (iR <= 6)
+		// 40% chances of early delivery
+		if (iR <= 4)
 			return rnd.nextInt(2) + 1;
 		// 20% chances of late delivery
-		if (iR <= 8)
+		if (iR <= 6)
 			return rnd.nextInt(10) + 3;
-		// 20% (Remaining) chance of undeliverable
+		// 40% (Remaining) chance of undeliverable
 		return -1;
 	}
 
