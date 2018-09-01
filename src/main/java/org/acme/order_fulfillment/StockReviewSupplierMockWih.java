@@ -19,7 +19,7 @@ public class StockReviewSupplierMockWih implements WorkItemHandler {
 		ProductOrder po = (ProductOrder) workItem.getParameter("productOrder");
 
 		int deliverable = calculateDeliverable();
-		po.setUndeliverable(deliverable == -1);
+		po.setUndeliverable(deliverable == 0);
 		po.setLateDelivery(deliverable > 2);
 		po.setSupplierDeliveryDays(deliverable);
 
@@ -32,14 +32,16 @@ public class StockReviewSupplierMockWih implements WorkItemHandler {
 	private int calculateDeliverable() {
 		Random rnd = new Random();
 		int iR = rnd.nextInt(10) + 1;
+		System.out.println("Calculated deliverable as: " + iR);
+		// 20% undeliverable
+		if (iR <= 2)
+			return 0;
 		// 40% chances of early delivery
-		if (iR <= 4)
-			return rnd.nextInt(2) + 1;
-		// 20% chances of late delivery
 		if (iR <= 6)
-			return rnd.nextInt(10) + 3;
-		// 40% (Remaining) chance of undeliverable
-		return -1;
+			return rnd.nextInt(2) + 1;
+
+		// 40% (Remaining) chance of late delivery
+		return rnd.nextInt(10) + 3;
 	}
 
 }
