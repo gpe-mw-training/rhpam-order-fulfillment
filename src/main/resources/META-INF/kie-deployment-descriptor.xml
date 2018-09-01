@@ -8,7 +8,7 @@
     <marshalling-strategies>
         <marshalling-strategy>
             <resolver>mvel</resolver>
-            <identifier>new org.drools.persistence.jpa.marshaller.JPAPlaceholderResolverStrategy("org.acme:order-fulfillment:1.0.0", classLoader)</identifier>
+            <identifier>new org.drools.persistence.jpa.marshaller.JPAPlaceholderResolverStrategy("org.acme:order-fulfillment:2.3.0", classLoader)</identifier>
             <parameters/>
         </marshalling-strategy>
     </marshalling-strategies>
